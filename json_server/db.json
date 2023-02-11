@@ -1,0 +1,48 @@
+{
+  "user": [
+    {
+      "id": 1,
+      "username": "admin"
+    },
+    {
+      "id": 2,
+      "username": "user"
+    },
+    {
+      "id": 3,
+      "username": "user2"
+    }
+  ],
+  "sanPham": [
+    {
+      "id": 1,
+      "name": "sanPham1",
+      "price": 500,
+      "quantity": 10,
+      "discount": "50%"
+    },
+    {
+      "id": 2,
+      "name": "sanPham2",
+      "price": 1000,
+      "quantity": 20,
+      "discount": "50%"
+    },
+    {
+      "id": 3,
+      "name": "sanPham3",
+      "price": 1500,
+      "quantity": 30,
+      "discount": "50%"
+    },
+    {
+      "id": "4"
+    },
+    {
+      "id": "5"
+    },
+    {
+      "id": "6"
+    }
+  ]
+}

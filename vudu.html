@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <select id="list" onchange="getNguoiThucHien()">
+        <option value="Phạm Văn Dũng">Phạm Văn Dũng</option>
+        <option value="Phan Đình Sinh">Phan Đình Sinh</option>
+        <option value="Phạm Hùng Thái">Phạm Hùng Thái</option>
+        <option value="Trương Đình Vũ">Trương Đình Vũ</option>
+        <option value="Phan Văn Toàn">Phan Văn Toàn</option>
+        <option value="Nguyễn Thị Hà">Nguyễn Thị Hà</option>
+        <option value="Trần Thị Ngọc Dung">Trần Thị Ngọc Dung</option>
+        <option value="Đinh Xuân Hoàng">Đinh Xuân Hoàng</option>
+        <option value="Đỗ Văn Đan">Đỗ Văn Đan</option>
+        <option value="Lê Việt Phong">Lê Việt Phong</option>
+        <option value="Mai Thị Hà">Mai Thị Hà</option>
+        <option value="Vũ Trọng Soạn">Vũ Trọng Soạn</option>
+        <option value="Huỳnh Thị Tịnh">Huỳnh Thị Tịnh</option>
+        <option value="Nguyễn Thị Kim Sa">Nguyễn Thị Kim Sa</option>
+        <option value="Bùi Ngọc Huy">Bùi Ngọc Huy</option>
+        <option value="Nguyễn Minh Đức">Nguyễn Minh Đức</option>
+      </select>
+
+      <input type="pice" >
+      
+  <br><br>
+  <script>
+    function getNguoiThucHien(){
+    var nguoiTiepNhan = document.getElementById("list").value;
+    console.log(nguoiTiepNhan)
+    }
+    function format2(n, currency) {
+      return currency + n.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,');
+    }
+  </script>
+</form>
+ 
+
+
+</body>
+</html>

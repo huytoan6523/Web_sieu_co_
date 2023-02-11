@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "ccxt": "^2.6.36",
+    "moment": "^2.29.4"
+  }
+}

@@ -1,0 +1,24 @@
+<div class="container">
+    
+    <div>
+      <table class="table">
+        <tr>
+          <td>id</td>
+          <td>Ten sp</td>
+          <td>Gia ban</td>
+          <td>So luong ton</td>
+          <td>Giam gia</td>
+          <td></td>
+        </tr>
+        <tr ng-repeat="sp in sanPhams">
+          <td>{{sp.id}}</td>
+          <td>{{sp.name}}</td>
+          <td>{{sp.price}}</td>
+          <td>{{sp.quantity}}</td>
+          <td>{{sp.discount}}</td>
+          <td><button>Sua</button><button>Xoa</button></td>                  
+        </tr>
+      </table>
+
+    </div>
+  </div>

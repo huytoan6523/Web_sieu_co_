@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div ng-app="myApp">
+      <table ng-controller="myctrl">
+        <tr>
+          <td>Họ Tên</td>
+          <td>Lớp</td>
+          <td>Điểm</td>
+          <td>Trạng thái</td>
+          <td></td>
+        </tr>
+        <tr ng-repeat=" user in user1">
+          <td>{{user.name}}</td>
+          <td>{{user.lop}}</td>
+          <td>{{user.diemToan}}</td>
+          <td>{{user.trangThai}}</td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+
+    <script>
+      function user($scope) {
+        var users = [
+          {
+            name: "John Smith",
+            lop: "it3",
+            diemToan: 7,
+            trangThai: "Học lại",
+          },
+          {
+            name: "Toàn",
+            lop: "it3",
+            diemToan: 7,
+            trangThai: "Học lại",
+          },
+        ];
+        $scope.user1 = users;
+      }
+      var app = angular.module("myApp", []);
+      app.controller("myctrl", user);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+.header{
+  height: auto;
+  background-color: rgb(1, 1, 73); 
+}
+
+
+  input[type=text] {
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('imgs/search.png');
+    background-size: 25px;
+    background-position: 90px 10px;     /* khoảng các của hình */
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 10px;       /* khoảng cách của chữ */
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+  }
+  
+
+.nav{
+  height: 100px;
+  background-color: aqua;
+}
+.slide{
+  height: 100px;
+  background-color: blueviolet;
+}
+.article{
+  height: 100px;
+background-color:  cadetblue;
+}
+.footer{
+  height: 100px;
+  background-color: yellow;
+}

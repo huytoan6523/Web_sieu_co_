@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <title>Document</title>
+    </head>
+<body>
+<div ng-app="myapp">
+    <table ng-controller="MyCtrl">
+        <tr>
+            <td>Name</td>
+            <td>Like</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>{{user.name}}</td>
+            <td>{{user.like}}</td>
+            <td><button ng-click="like(user)">Like</button></td>
+        </tr>
+    </table>
+</div>
+
+    <script>
+        function showlike($scope){
+            var user = {
+                name: 'Toàn',
+                like: 0,
+            };
+            $scope.user = user;
+            $scope.like = function(user) {
+                user.like ++;
+            };
+        }
+        var app= angular.module('myapp', []);
+        app.controller('MyCtrl', showlike);
+        
+
+    </script>
+</body>
+</html>

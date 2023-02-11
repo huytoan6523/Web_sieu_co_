@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  </head>
+  <body ng-app="myapp">
+    <div ng-controller="myctrl">
+      <p>{{welcome}}</p>
+    </div>
+    <div ng-controller="myctrl2">
+      <div>Số lượng: <input type="text" ng-model="soLuong"></div>
+      <div>Thành tiền: {{soLuong * 3}}</div>
+    </div>
+    
+    <div ng-controller="myctrl3" >
+      <div ng-repeat="vongLap in sanPham">
+      <img src="{{vongLap.img}}" alt="">
+      mo ta = {{vongLap.mota}}
+    </div>
+    </div>
+
+    <script>
+      function myfunc($scope) {
+        $scope.welcome = "helle";
+      }
+      function myfunc1($scope){
+        $scope.soLuong = 0;
+      }
+      function SanPham($scope){
+        var sanPham =[
+        {
+          img: "/vd/imgs/1.png", 
+          mota:"Hang moi"
+      },{
+          img: "/vd/imgs/1.png", 
+          mota:"Hang moi"
+      },
+      {
+          img: "/vd/imgs/1.png", 
+          mota:"Hang moi"
+      },
+        ]  
+        $scope.sanPham=sanPham;
+      }
+      var app = angular.module("myapp", []);
+      app.controller("myctrl", myfunc);
+      app.controller("myctrl2", myfunc1);
+      app.controller("myctrl3", SanPham);
+
+    </script>
+  </body>
+</html>
