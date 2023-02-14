@@ -16,10 +16,10 @@
   "sanPham": [
     {
       "id": 1,
-      "name": "sanPham1",
-      "price": 500,
-      "quantity": 10,
-      "discount": "50%"
+      "name": "toan",
+      "price": "4565",
+      "quantity": "32",
+      "discount": "gug"
     },
     {
       "id": 2,

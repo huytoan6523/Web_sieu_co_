@@ -1,3 +1,21 @@
+<label for="inputText" class="form-label">id</label>
+<input class="form-control" type="text" placeholder="id" ng-model="id">
+
+<label for="inputText" class="form-label">Tên sp</label>
+<input class="form-control" type="text" placeholder="Tên sp" ng-model="tenSP">
+
+<label for="inputText" class="form-label">Giá bán</label>
+<input class="form-control" type="text" placeholder="Giá bán" ng-model="price">
+
+<label for="inputText" class="form-label">Số lượng tồn</label>
+<input class="form-control" type="text" placeholder="Số lượng tồn" ng-model="quantity">
+
+<label for="inputText" class="form-label">Giảm giá</label>
+<input class="form-control" type="text" placeholder="Giảm giá" ng-model="discount">
+
+<button type="button" class="btn btn-primary" ng-click="addSanPham()">Save</button>
+<button type="button" class="btn btn-primary" ng-click="updateSanPham()">Update</button>
+
 <div class="container">
     
     <div>
@@ -16,7 +34,7 @@
           <td>{{sp.price}}</td>
           <td>{{sp.quantity}}</td>
           <td>{{sp.discount}}</td>
-          <td><button>Sua</button><button>Xoa</button></td>                  
+          <td><button ng-click="loadSanPhamForm(sp.id)">Detail</button><button>Xoa</button></td>                  
         </tr>
       </table>
 
