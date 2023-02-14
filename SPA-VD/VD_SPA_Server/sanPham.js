@@ -38,7 +38,7 @@ window.spController = function($scope,$http,$location){
 $scope.updateSanPham = function(){
     $http.put('http://localhost:3000/sanPham/'+$scope.id,{
         id: $scope.id,
-        name: $scope.tenSP,
+        name: $scope.tenSP, 
         price: $scope.price,
         quantity: $scope.quantity,
         discount: $scope.discount,
