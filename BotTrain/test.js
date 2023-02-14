@@ -1,28 +1,54 @@
 const ccxt = require("ccxt");
 
-
-const exchange = new ccxt.binance({
-    apiKey: "WdaunAaVgs4YvW3uTdx1idBsqRRjPQ3stLcw2ZzK8zH0wVn8lJDestz1JzQ4GkQj",
-    secret: "XBRYauXkUZkpFA2hDGZ9FHgbSZrepOTKdDnRYpbwh2KnstCnPYAMAUcydL9GHHNb",
+(async () => {
+  const exchangeId = "binance";
+  const exchangeClass = ccxt[exchangeId];
+  const exchange = new exchangeClass({
+    apiKey: "Ri6SRCrHveUa30WEaCMj6ukGxxKxGqgbxk3NJyNQtQocEIR8KgD0XhRzt8qf76rW",
+    secret: "yKjuSdj2JvgktCtmbG0QL7VKi77W69dlP4kTYSm41RqLNoYXOje9FiSIbKRHJC8S",
     enableRateLimit: true,
-});
+    options: {
+      adjustForTimeDifference: true
+    }
+  });
+  // set sandbox mode
+  exchange.setSandboxMode(true);
 
-const symbol = "BTC/USDT";
+  // get balance
+  const balance = await exchange.fetchBalance();
+  console.log(balance);
 
-// Lấy giá hiện tại của cặp tiền BTC/USDT
-const ticker = await exchange.fetchTicker(symbol);
-const currentPrice = ticker.last;
+  // get ticker price
+  const symbol = "BTC/USDT";
+  const ticker = await exchange.fetchTicker(symbol);
+  const price = ticker.last;
+  console.log(`Price: ${price}`);
 
-// Tính toán số tiền cần để đặt lệnh mua 1% tài khoản
-const balance = await exchange.fetchBalance();
-const equity = balance.total.USDT;
-const orderSize = equity * 0.01;
+  // place order
+  const orderSize = 0.01;
+  const buyPrice = price * 0.99; // buy 1% lower than current price
+  const sellPrice = price * 1.01; // sell 1% higher than current price
 
-// Tính toán giá mua dựa trên giá hiện tại, lấy giá thấp hơn 1% so với giá hiện tại
-const buyPrice = currentPrice * 0.99;
+  const buyOrder = await exchange.createOrder(
+    symbol,
+    "limit",
+    "buy",
+    orderSize,
+    buyPrice
+  );
 
-// Đặt lệnh mua với đòn bẩy 10 và giá đã tính toán được
-const order = await exchange.createOrder('BTC/USDT', 'limit', 'buy', orderSize, buyPrice, {
-    leverage: 10,
-    type: 'future'
-});
+  console.log("Buy order placed:", buyOrder);
+
+  const sellOrder = await exchange.createOrder(
+    symbol,
+    "limit",
+    "sell",
+    orderSize,
+    sellPrice
+  );
+
+  console.log("Sell order placed:", sellOrder);
+
+
+  
+})();
